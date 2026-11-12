@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexVA Studio | Premium Virtual Assistant & Operations Support</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF8F5',
+              surface: '#F3EFEA',
+              navy: '#0F172A',
+              slate: '#334155',
+              terracotta: '#C25E38',
+              terracottaHover: '#A84D2B',
+              sage: '#4A7C59',
+              sageLight: '#EAF2EC',
+              gold: '#D97706'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #FAF8F5;
+      color: #0F172A;
+    }
+    .gradient-hero {
+      background: radial-gradient(circle at 80% 20%, rgba(194, 94, 56, 0.08) 0%, rgba(74, 124, 89, 0.05) 40%, rgba(250, 248, 245, 0) 70%);
+    }
+    .custom-shadow {
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+    }
+    .custom-shadow-hover:hover {
+      box-shadow: 0 20px 35px -10px rgba(194, 94, 56, 0.15);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-brand-terracotta selection:text-white">
+
+  <!-- NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-stone-200/60 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 group">
+          <div class="w-10 h-10 rounded-xl bg-brand-terracotta text-white flex items-center justify-center font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
+            A
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-xl tracking-tight text-brand-navy">Apex<span class="text-brand-terracotta">VA</span></span>
+            <span class="text-[10px] tracking-widest text-stone-500 uppercase font-semibold">Studio & Ops</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8 font-medium text-stone-700 text-sm">
+          <a href="#services" class="hover:text-brand-terracotta transition-colors">Services</a>
+          <a href="#packages" class="hover:text-brand-terracotta transition-colors">Packages</a>
+          <a href="#about" class="hover:text-brand-terracotta transition-colors">About & Tech</a>
+          <a href="#testimonials" class="hover:text-brand-terracotta transition-colors">Testimonials</a>
+          <a href="#faq" class="hover:text-brand-terracotta transition-colors">FAQ</a>
+        </nav>
+
+        <!-- Desktop Action CTA -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="#booking" class="px-5 py-2.5 rounded-full bg-brand-navy text-white text-sm font-semibold hover:bg-stone-800 transition-all duration-200 shadow-sm hover:shadow">
+            Book a Call
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" type="button" class="p-2 rounded-lg text-stone-700 hover:text-brand-terracotta hover:bg-stone-100 focus:outline-none" aria-label="Toggle menu">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-3 pb-6 space-y-3 shadow-xl">
+      <a href="#services" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-50 hover:text-brand-terracotta">Services</a>
+      <a href="#packages" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-50 hover:text-brand-terracotta">Packages</a>
+      <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-50 hover:text-brand-terracotta">About & Tech</a>
+      <a href="#testimonials" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-50 hover:text-brand-terracotta">Testimonials</a>
+      <a href="#faq" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-stone-800 hover:bg-stone-50 hover:text-brand-terracotta">FAQ</a>
+      <div class="pt-2">
+        <a href="#booking" class="mobile-link block w-full text-center px-4 py-3 rounded-xl bg-brand-terracotta text-white font-semibold text-base shadow-sm">
+          Book a Free Discovery Call
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative gradient-hero pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-sageLight text-brand-sage text-xs font-bold uppercase tracking-wider border border-brand-sage/20">
+              <span class="w-2 h-2 rounded-full bg-brand-sage animate-pulse"></span>
+              Accepting 2 New Executive Clients For Q2
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-navy tracking-tight leading-[1.15]">
+              Reclaim <span class="text-brand-terracotta underline decoration-stone-300 underline-offset-8">15+ Hours</span> Every Week. Focus on Growth, Not Busywork.
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-stone-600 font-normal leading-relaxed max-w-2xl">
+              High-touch executive administration, streamlined workflow systems, and client operations built for founders, consultants, and fast-growing agencies.
+            </p>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a href="#booking" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-brand-terracotta text-white font-semibold text-base hover:bg-brand-terracottaHover transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                <span>Book a Free Discovery Call</span>
+                <i data-lucide="arrow-right" class="w-5 h-5 ml-2"></i>
+              </a>
+              <a href="#packages" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-white text-stone-800 font-semibold text-base border border-stone-200 hover:bg-stone-50 transition-all hover:border-stone-300">
+                Explore Packages
+              </a>
+            </div>
+
+            <!-- Trust Metrics Badge Bar -->
+            <div class="pt-6 border-t border-stone-200/80 grid grid-cols-3 gap-4 text-left">
+              <div>
+                <p class="text-2xl sm:text-3xl font-extrabold text-brand-navy">15+ Hrs</p>
+                <p class="text-xs sm:text-sm text-stone-500 font-medium">Saved Per Week Avg.</p>
+              </div>
+              <div class="border-l border-stone-200 pl-4">
+                <p class="text-2xl sm:text-3xl font-extrabold text-brand-navy">100%</p>
+                <p class="text-xs sm:text-sm text-stone-500 font-medium">On-Time Execution</p>
+              </div>
+              <div class="border-l border-stone-200 pl-4">
+                <p class="text-2xl sm:text-3xl font-extrabold text-brand-navy">5.0 ★</p>
+                <p class="text-xs sm:text-sm text-stone-500 font-medium">Client Rating (25+ Reviews)</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Graphic / Virtual Assistant Card Illustration -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative mx-auto max-w-md lg:max-w-none">
+              <!-- Decorative backing element -->
+              <div class="absolute -top-4 -left-4 w-72 h-72 bg-brand-terracotta/10 rounded-full filter blur-3xl"></div>
+              <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-brand-sage/10 rounded-full filter blur-3xl"></div>
+
+              <!-- Main Card Container -->
+              <div class="relative bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/80 custom-shadow space-y-6">
+                <!-- Profile Header -->
+                <div class="flex items-center gap-4">
+                  <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=250" alt="Sarah Jenkins - Virtual Assistant Founder" class="w-16 h-16 rounded-2xl object-cover border-2 border-brand-terracotta/30 shadow-md">
+                    <span class="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-500 border-2 border-white rounded-full"></span>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-lg text-brand-navy">Sarah Jenkins</h3>
+                    <p class="text-xs font-semibold text-brand-terracotta uppercase tracking-wider">Lead Executive Assistant</p>
+                    <p class="text-xs text-stone-500">Ex-Corporate Chief of Staff • 8+ Yrs Exp.</p>
+                  </div>
+                </div>
+
+                <!-- Simulated Inbox Status Badge -->
+                <div class="p-4 rounded-2xl bg-brand-surface/70 border border-stone-200/60 space-y-3">
+                  <div class="flex justify-between items-center text-xs text-stone-600 font-medium">
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="mail-check" class="w-4 h-4 text-brand-sage"></i> Inbox Zero Maintained
+                    </span>
+                    <span class="text-emerald-700 bg-emerald-100 font-semibold px-2 py-0.5 rounded-full">Active</span>
+                  </div>
+                  <div class="flex justify-between items-center text-xs text-stone-600 font-medium">
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="calendar" class="w-4 h-4 text-brand-terracotta"></i> 14 Meetings Rescheduled
+                    </span>
+                    <span class="text-stone-500">Today</span>
+                  </div>
+                  <div class="flex justify-between items-center text-xs text-stone-600 font-medium">
+                    <span class="flex items-center gap-1.5">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-sage"></i> Notion Dashboard Updated
+                    </span>
+                    <span class="text-stone-500">Synced</span>
+                  </div>
+                </div>
+
+                <!-- Live Client Testimonial Snippet -->
+                <div class="p-4 rounded-2xl bg-stone-900 text-white space-y-2 relative overflow-hidden">
+                  <div class="flex text-amber-400 gap-1 text-xs">
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                  </div>
+                  <p class="text-xs text-stone-300 italic">
+                    "Sarah transformed my chaos into structured SOPs in just 2 weeks. I finally took my first real weekend off."
+                  </p>
+                  <p class="text-[11px] text-stone-400 font-medium text-right">— Marcus V., Tech Agency Founder</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE ROI CALCULATOR BANNER -->
+    <section class="py-12 bg-white border-y border-stone-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-brand-cream rounded-3xl p-6 sm:p-10 border border-stone-200 shadow-sm space-y-8">
+          <div class="text-center max-w-2xl mx-auto">
+            <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta">Interactive ROI Calculator</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy mt-1">See How Much Time & Money You Lose To Admin</h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Inputs -->
+            <div class="space-y-6 bg-white p-6 rounded-2xl border border-stone-200">
+              <div>
+                <div class="flex justify-between text-sm font-medium text-stone-700 mb-2">
+                  <span>Hours spent on admin/email per week:</span>
+                  <span id="hours-val" class="font-bold text-brand-terracotta">15 Hours</span>
+                </div>
+                <input type="range" id="hours-slider" min="5" max="35" value="15" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-brand-terracotta">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm font-medium text-stone-700 mb-2">
+                  <span>Your hourly rate / value:</span>
+                  <span id="rate-val" class="font-bold text-brand-terracotta">$100/hr</span>
+                </div>
+                <input type="range" id="rate-slider" min="40" max="350" step="10" value="100" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-brand-terracotta">
+              </div>
+            </div>
+
+            <!-- Calculation Output -->
+            <div class="bg-brand-navy text-white p-6 rounded-2xl space-y-4 text-center sm:text-left">
+              <p class="text-xs font-medium text-stone-400 uppercase tracking-wider">Your Monthly Admin Tax</p>
+              <div class="text-3xl sm:text-4xl font-extrabold text-amber-400" id="calc-cost">$6,000 / month</div>
+              <p class="text-xs text-stone-300 leading-relaxed">
+                By delegating these tasks to ApexVA, you regain <span id="calc-hours" class="font-bold text-white">60 hours</span> each month to generate revenue and scale your core business.
+              </p>
+              <a href="#booking" class="inline-block text-xs font-bold text-brand-terracotta bg-white px-4 py-2.5 rounded-lg hover:bg-stone-100 transition-colors">
+                Delegate & Reclaim Your Schedule &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 lg:py-28">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta bg-brand-surface px-3 py-1 rounded-full border border-stone-200">What We Handle</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy tracking-tight">Tailored Virtual Support Services</h2>
+          <p class="text-stone-600 text-base sm:text-lg">
+            Stop spinning plates. We step in as your proactive operational backbone so you can focus exclusively on revenue-generating strategy.
+          </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <!-- Card 1 -->
+          <div class="bg-white rounded-3xl p-7 border border-stone-200 custom-shadow hover:border-brand-terracotta/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-brand-surface text-brand-terracotta flex items-center justify-center font-bold">
+                <i data-lucide="inbox" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-navy">Executive & Inbox Management</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Reclaim a calm inbox and a flawless schedule without missing key opportunities.
+              </p>
+              <ul class="space-y-2 text-xs text-stone-600 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Inbox Zero & Email Triage</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Calendar Optimization & Scheduling</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Travel & Event Booking Logistics</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> VIP Client Screening</li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <a href="#booking" onclick="preselectService('Executive & Inbox Management')" class="text-xs font-bold text-brand-terracotta hover:underline inline-flex items-center gap-1">
+                Inquire about Executive Admin <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-3xl p-7 border border-stone-200 custom-shadow hover:border-brand-terracotta/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-brand-sageLight text-brand-sage flex items-center justify-center font-bold">
+                <i data-lucide="workflow" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-navy">Operations & SOP Systems</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Turn chaotic workflows into documented, scalable systems that run smoothly.
+              </p>
+              <ul class="space-y-2 text-xs text-stone-600 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Notion & Asana Workspace Setup</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Standard Operating Procedure (SOP) Docs</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Project Management Tracking</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Automation with Zapier / Make</li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <a href="#booking" onclick="preselectService('Operations & SOP Systems')" class="text-xs font-bold text-brand-terracotta hover:underline inline-flex items-center gap-1">
+                Inquire about Operations <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-3xl p-7 border border-stone-200 custom-shadow hover:border-brand-terracotta/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold">
+                <i data-lucide="share-2" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-navy">Social & Content Admin</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Keep your online presence active and professional without consuming your week.
+              </p>
+              <ul class="space-y-2 text-xs text-stone-600 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Content Scheduling & Formatting</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Basic Canva Graphic Creation</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Newsletter & Blog Publishing</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Podcast & Guest Outreach Admin</li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <a href="#booking" onclick="preselectService('Social & Content Support')" class="text-xs font-bold text-brand-terracotta hover:underline inline-flex items-center gap-1">
+                Inquire about Content Admin <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded-3xl p-7 border border-stone-200 custom-shadow hover:border-brand-terracotta/40 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-stone-100 text-stone-800 flex items-center justify-center font-bold">
+                <i data-lucide="users" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-brand-navy">Client Onboarding & CRM</h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                Deliver a white-glove experience for new clients from payment to kickoff.
+              </p>
+              <ul class="space-y-2 text-xs text-stone-600 pt-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> CRM Setup (HubSpot / Dubsado)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Contract & Invoice Management</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Client Intake & Welcome Packets</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-sage"></i> Testimonial & Feedback Collection</li>
+              </ul>
+            </div>
+            <div class="pt-6">
+              <a href="#booking" onclick="preselectService('Client Onboarding & CRM')" class="text-xs font-bold text-brand-terracotta hover:underline inline-flex items-center gap-1">
+                Inquire about CRM & Onboarding <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PACKAGES & PRICING SECTION -->
+    <section id="packages" class="py-20 bg-stone-900 text-white relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400 bg-stone-800 px-3 py-1 rounded-full border border-stone-700">Transparent Monthly Retainers</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Flexible Monthly Support Plans</h2>
+          <p class="text-stone-300 text-base sm:text-lg">
+            No surprise fees, no complex employment overhead. Dedicated virtual assistant capacity committed to your monthly growth goals.
+          </p>
+        </div>
+
+        <!-- Pricing Cards -->
+        <div class="mt-16 grid lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- Package 1: Starter -->
+          <div class="bg-stone-800/80 rounded-3xl p-8 border border-stone-700 flex flex-col justify-between hover:border-stone-500 transition-all">
+            <div class="space-y-6">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Core Essentials</span>
+                <h3 class="text-2xl font-bold text-white mt-1">Starter Retainer</h3>
+                <p class="text-xs text-stone-400 mt-1">Ideal for solopreneurs needing targeted admin relieve.</p>
+              </div>
+              
+              <div class="flex items-baseline gap-1 border-y border-stone-700 py-4">
+                <span class="text-4xl font-extrabold text-white">$750</span>
+                <span class="text-stone-400 text-sm font-medium">/ month</span>
+              </div>
+
+              <div class="space-y-3">
+                <p class="text-xs font-semibold text-stone-300 uppercase tracking-wider">What's included:</p>
+                <ul class="space-y-3 text-sm text-stone-300">
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> <strong>15 Hours</strong> monthly dedicated capacity</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Email & Calendar Triage</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Basic Task Management (Asana/Trello)</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Weekly Progress Status Email</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> 48-Hour Turnaround Time</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <button onclick="selectPackage('Starter Retainer ($750/mo)')" class="w-full py-3.5 rounded-xl bg-stone-700 hover:bg-stone-600 text-white font-semibold text-sm transition-colors text-center block">
+                Select Starter Plan
+              </button>
+            </div>
+          </div>
+
+          <!-- Package 2: Growth (MOST POPULAR) -->
+          <div class="bg-stone-800 rounded-3xl p-8 border-2 border-brand-terracotta relative flex flex-col justify-between shadow-2xl scale-105 z-10">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-terracotta text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
+              ★ Most Popular Choice
+            </div>
+
+            <div class="space-y-6">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-400">High Growth</span>
+                <h3 class="text-2xl font-bold text-white mt-1">Growth Partner</h3>
+                <p class="text-xs text-stone-300 mt-1">Full operational leverage for scaling founders and small teams.</p>
+              </div>
+
+              <div class="flex items-baseline gap-1 border-y border-stone-700 py-4">
+                <span class="text-4xl font-extrabold text-white">$1,400</span>
+                <span class="text-stone-400 text-sm font-medium">/ month</span>
+              </div>
+
+              <div class="space-y-3">
+                <p class="text-xs font-semibold text-stone-200 uppercase tracking-wider">Everything in Starter, plus:</p>
+                <ul class="space-y-3 text-sm text-stone-200">
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> <strong>30 Hours</strong> monthly dedicated capacity</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Notion Workspace & SOP Setup</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Client Invoicing & CRM Management</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Content & Newsletter Scheduling</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Priority 24-Hour Turnaround</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-amber-400 shrink-0"></i> Bi-weekly 1:1 Strategy Call</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <button onclick="selectPackage('Growth Partner ($1,400/mo)')" class="w-full py-4 rounded-xl bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-bold text-sm transition-all shadow-lg text-center block">
+                Select Growth Plan
+              </button>
+            </div>
+          </div>
+
+          <!-- Package 3: Executive Partner -->
+          <div class="bg-stone-800/80 rounded-3xl p-8 border border-stone-700 flex flex-col justify-between hover:border-stone-500 transition-all">
+            <div class="space-y-6">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Total Delegation</span>
+                <h3 class="text-2xl font-bold text-white mt-1">Executive Partner</h3>
+                <p class="text-xs text-stone-400 mt-1">Turnkey executive chief-of-staff level integration.</p>
+              </div>
+
+              <div class="flex items-baseline gap-1 border-y border-stone-700 py-4">
+                <span class="text-4xl font-extrabold text-white">$2,250</span>
+                <span class="text-stone-400 text-sm font-medium">/ month</span>
+              </div>
+
+              <div class="space-y-3">
+                <p class="text-xs font-semibold text-stone-300 uppercase tracking-wider">Everything in Growth, plus:</p>
+                <ul class="space-y-3 text-sm text-stone-300">
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> <strong>50 Hours</strong> monthly dedicated capacity</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> End-to-End Client Onboarding</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Advanced Automation Workflows</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Slack Channel Direct Access</li>
+                  <li class="flex items-center gap-2.5"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0"></i> Same-Day Urgent Task Priority</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <button onclick="selectPackage('Executive Partner ($2,250/mo)')" class="w-full py-3.5 rounded-xl bg-stone-700 hover:bg-stone-600 text-white font-semibold text-sm transition-colors text-center block">
+                Select Executive Plan
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mt-12 text-center text-xs text-stone-400">
+          * Need custom hours or a one-time project setup? <a href="#booking" class="text-amber-400 font-semibold underline">Contact us for a bespoke quote</a>.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT & TECH STACK SECTION -->
+    <section id="about" class="py-20 lg:py-28 bg-brand-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Founder Bio Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-white rounded-3xl p-8 border border-stone-200 custom-shadow space-y-6">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" alt="Sarah Jenkins" class="w-full h-72 object-cover rounded-2xl shadow">
+              
+              <div class="space-y-2">
+                <h3 class="text-2xl font-bold text-brand-navy">Sarah Jenkins</h3>
+                <p class="text-sm font-semibold text-brand-terracotta">Founder & Lead Operations Assistant</p>
+              </div>
+
+              <p class="text-stone-600 text-sm leading-relaxed">
+                "After 8 years in executive operations for Fortune 500 tech leaders, I founded ApexVA Studio to give ambitious business owners the high-caliber systems and admin partner they need to break past revenue ceilings."
+              </p>
+
+              <!-- Working Values Badges -->
+              <div class="grid grid-cols-2 gap-3 pt-2">
+                <div class="p-3 bg-brand-surface rounded-xl text-xs font-bold text-stone-700 flex items-center gap-2">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-brand-sage"></i> 100% Confidential
+                </div>
+                <div class="p-3 bg-brand-surface rounded-xl text-xs font-bold text-stone-700 flex items-center gap-2">
+                  <i data-lucide="zap" class="w-4 h-4 text-brand-terracotta"></i> Proactive Execution
+                </div>
+                <div class="p-3 bg-brand-surface rounded-xl text-xs font-bold text-stone-700 flex items-center gap-2">
+                  <i data-lucide="layers" class="w-4 h-4 text-amber-600"></i> Systems-First Mindset
+                </div>
+                <div class="p-3 bg-brand-surface rounded-xl text-xs font-bold text-stone-700 flex items-center gap-2">
+                  <i data-lucide="clock" class="w-4 h-4 text-blue-600"></i> Fast Turnaround
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools Mastered Badges -->
+          <div class="lg:col-span-7 space-y-8">
+            <div class="space-y-3">
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta">Tech Stack Mastery</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Tools We Use Daily To Drive Efficiency</h2>
+              <p class="text-stone-600 text-base">
+                We plug directly into your software suite without a steep learning curve.
+              </p>
+            </div>
+
+            <!-- Tech Badges Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              
+              <!-- Notion -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-stone-100 flex items-center justify-center font-bold text-stone-800 text-lg">N</div>
+                <span class="font-bold text-sm text-brand-navy">Notion</span>
+                <span class="text-[10px] text-stone-500 font-medium">Docs & SOPs</span>
+              </div>
+
+              <!-- Slack -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center font-bold text-lg"><i data-lucide="message-square" class="w-5 h-5"></i></div>
+                <span class="font-bold text-sm text-brand-navy">Slack</span>
+                <span class="text-[10px] text-stone-500 font-medium">Team Comms</span>
+              </div>
+
+              <!-- HubSpot -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center font-bold text-lg"><i data-lucide="contact-2" class="w-5 h-5"></i></div>
+                <span class="font-bold text-sm text-brand-navy">HubSpot</span>
+                <span class="text-[10px] text-stone-500 font-medium">CRM & Sales</span>
+              </div>
+
+              <!-- Google Workspace -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                <span class="font-bold text-sm text-brand-navy">Google Suite</span>
+                <span class="text-[10px] text-stone-500 font-medium">Docs, Gmail, Drive</span>
+              </div>
+
+              <!-- Asana -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-lg"><i data-lucide="check-square" class="w-5 h-5"></i></div>
+                <span class="font-bold text-sm text-brand-navy">Asana</span>
+                <span class="text-[10px] text-stone-500 font-medium">Project Management</span>
+              </div>
+
+              <!-- Calendly -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold text-lg"><i data-lucide="calendar" class="w-5 h-5"></i></div>
+                <span class="font-bold text-sm text-brand-navy">Calendly</span>
+                <span class="text-[10px] text-stone-500 font-medium">Scheduling</span>
+              </div>
+
+              <!-- QuickBooks -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold text-lg"><i data-lucide="receipt" class="w-5 h-5"></i></div>
+                <span class="font-bold text-sm text-brand-navy">QuickBooks</span>
+                <span class="text-[10px] text-stone-500 font-medium">Invoicing & Expenses</span>
+              </div>
+
+              <!-- Canva -->
+              <div class="p-4 bg-white rounded-2xl border border-stone-200 hover:border-stone-400 transition-colors flex flex-col items-center text-center space-y-2">
+                <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-700 flex items-center justify-center font-bold text-lg"><i data-lucide="palette" class="w-5 h-5"></i></div>
+                <span class="font-bold text-sm text-brand-navy">Canva</span>
+                <span class="text-[10px] text-stone-500 font-medium">Visual Design</span>
+              </div>
+
+            </div>
+
+            <!-- Guarantee Callout -->
+            <div class="p-6 bg-brand-surface rounded-2xl border border-stone-200 flex items-start gap-4">
+              <div class="p-3 bg-white rounded-xl text-brand-terracotta shrink-0 shadow-sm">
+                <i data-lucide="award" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-brand-navy text-base">The 14-Day Seamless Onboarding Guarantee</h4>
+                <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+                  If we don't save you at least 10 hours in your first two weeks, we will work the remaining retainer hours free of charge until your systems are fully optimized.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-20 lg:py-28 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta bg-brand-surface px-3 py-1 rounded-full border border-stone-200">Client Results</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Trusted By Founders & Executives</h2>
+          <p class="text-stone-600 text-base sm:text-lg">
+            Here is what happens when you delegate admin to a proactive operations specialist.
+          </p>
+        </div>
+
+        <!-- Testimonials Cards Grid -->
+        <div class="mt-16 grid md:grid-cols-3 gap-8">
+          
+          <!-- Testimonial 1 -->
+          <div class="bg-brand-cream rounded-3xl p-8 border border-stone-200 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex text-amber-500 gap-1">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              </div>
+              <p class="text-stone-700 text-sm leading-relaxed italic">
+                "Sarah stepped into my boutique consultancy and completely audited my calendar and lead flow. I was spending 20 hours a week on scheduling and invoice chasing. Now I focus 100% on client delivery."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-stone-200">
+              <div class="w-10 h-10 rounded-full bg-stone-300 font-bold text-stone-700 flex items-center justify-center">DL</div>
+              <div>
+                <h4 class="font-bold text-sm text-brand-navy">David Lawson</h4>
+                <p class="text-xs text-stone-500">Managing Director, Beacon Strategy</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-brand-cream rounded-3xl p-8 border border-stone-200 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex text-amber-500 gap-1">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              </div>
+              <p class="text-stone-700 text-sm leading-relaxed italic">
+                "ApexVA didn't just take tasks off my plate; they built our team's entire Notion SOP library. Onboarding a new freelancer now takes 10 minutes instead of 3 days. Highly recommended!"
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-stone-200">
+              <div class="w-10 h-10 rounded-full bg-brand-terracotta text-white font-bold flex items-center justify-center">ER</div>
+              <div>
+                <h4 class="font-bold text-sm text-brand-navy">Elena Rostova</h4>
+                <p class="text-xs text-stone-500">Founder, Rostova Creative Co.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-brand-cream rounded-3xl p-8 border border-stone-200 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="flex text-amber-500 gap-1">
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              </div>
+              <p class="text-stone-700 text-sm leading-relaxed italic">
+                "Having Sarah on the Executive Partner tier is like having a co-founder who obsessed over details. Inbox zero every day and zero missed opportunities with high-value prospects."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-stone-200">
+              <div class="w-10 h-10 rounded-full bg-brand-sage text-white font-bold flex items-center justify-center">JT</div>
+              <div>
+                <h4 class="font-bold text-sm text-brand-navy">Jason Thorne</h4>
+                <p class="text-xs text-stone-500">CEO, SaaS Flow Labs</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section id="faq" class="py-20 bg-brand-cream border-t border-stone-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-4 mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta">Got Questions?</span>
+          <h2 class="text-3xl font-extrabold text-brand-navy">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4" id="faq-container">
+          
+          <!-- Q1 -->
+          <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-bold text-brand-navy text-base focus:outline-none">
+              <span>How quickly can we get started?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              We can usually kick off within 48 hours of our initial discovery call. After signing the agreement and completing a quick 30-minute password & access onboarding call, we take over your assigned tasks immediately.
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-bold text-brand-navy text-base focus:outline-none">
+              <span>What happens if I don't use all my retainer hours in a month?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              Up to 20% of unused hours can be rolled over to the following month (valid for 30 days). We track hours transparently with weekly status updates so you always know your exact balance.
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-bold text-brand-navy text-base focus:outline-none">
+              <span>How do you handle sensitive passwords and client data security?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              Security is paramount. We use password managers like 1Password or Bitwarden so you never share raw passwords. Every client relationship includes a comprehensive Non-Disclosure Agreement (NDA).
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="bg-white rounded-2xl border border-stone-200 overflow-hidden">
+            <button class="faq-btn w-full px-6 py-5 text-left flex justify-between items-center font-bold text-brand-navy text-base focus:outline-none">
+              <span>What communication channels do you use?</span>
+              <i data-lucide="chevron-down" class="w-5 h-5 text-stone-500 transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-6 pb-5 text-sm text-stone-600 leading-relaxed border-t border-stone-100 pt-3">
+              We seamlessly integrate into your workflow via Slack, Voxer, Email, or Asana. We set strict response windows so your work stays moving without disruptive late-night notifications.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE BOOKING & INQUIRY SECTION -->
+    <section id="booking" class="py-20 lg:py-28 bg-white border-t border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left Column: Quick Scheduler & Details -->
+          <div class="lg:col-span-5 space-y-8">
+            <div class="space-y-4">
+              <span class="text-xs font-bold uppercase tracking-widest text-brand-terracotta bg-brand-surface px-3 py-1 rounded-full border border-stone-200">Step 1 of 2</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-navy">Let's Reclaim Your Time</h2>
+              <p class="text-stone-600 text-base leading-relaxed">
+                Book your free 20-minute strategy call. We'll audit your current bottlenecks, identify top delegation priorities, and see if ApexVA is the right fit.
+              </p>
+            </div>
+
+            <!-- Simulated Calendar Quick Scheduler Widget -->
+            <div class="bg-brand-cream rounded-3xl p-6 border border-stone-200 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-stone-200">
+                <span class="font-bold text-sm text-brand-navy flex items-center gap-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-brand-terracotta"></i> Discovery Call Availability
+                </span>
+                <span class="text-xs text-stone-500">EST / Local Time</span>
+              </div>
+              
+              <!-- Date Buttons Simulator -->
+              <div class="grid grid-cols-4 gap-2 text-center text-xs">
+                <button class="time-slot-day p-2.5 rounded-xl bg-white border border-stone-200 hover:border-brand-terracotta font-semibold text-stone-700 active-day">
+                  <span class="block text-[10px] text-stone-400">MON</span> 16
+                </button>
+                <button class="time-slot-day p-2.5 rounded-xl bg-white border border-stone-200 hover:border-brand-terracotta font-semibold text-stone-700">
+                  <span class="block text-[10px] text-stone-400">TUE</span> 17
+                </button>
+                <button class="time-slot-day p-2.5 rounded-xl bg-white border border-stone-200 hover:border-brand-terracotta font-semibold text-stone-700">
+                  <span class="block text-[10px] text-stone-400">WED</span> 18
+                </button>
+                <button class="time-slot-day p-2.5 rounded-xl bg-white border border-stone-200 hover:border-brand-terracotta font-semibold text-stone-700">
+                  <span class="block text-[10px] text-stone-400">THU</span> 19
+                </button>
+              </div>
+
+              <!-- Time Slot Pills -->
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <button class="time-slot-btn py-2 bg-white rounded-lg border border-stone-200 font-medium text-stone-700 hover:bg-brand-surface">10:00 AM EST</button>
+                <button class="time-slot-btn py-2 bg-white rounded-lg border border-stone-200 font-medium text-stone-700 hover:bg-brand-surface">01:30 PM EST</button>
+                <button class="time-slot-btn py-2 bg-white rounded-lg border border-stone-200 font-medium text-stone-700 hover:bg-brand-surface">03:00 PM EST</button>
+                <button class="time-slot-btn py-2 bg-white rounded-lg border border-stone-200 font-medium text-stone-700 hover:bg-brand-surface">04:30 PM EST</button>
+              </div>
+
+              <div class="text-[11px] text-stone-500 text-center pt-2">
+                * Select your preferred time above or submit the inquiry form.
+              </div>
+            </div>
+
+            <!-- Bullet points -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 text-xs text-stone-700 font-medium">
+                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">✓</div>
+                <span>Zero pressure, no-obligation workflow assessment</span>
+              </div>
+              <div class="flex items-center gap-3 text-xs text-stone-700 font-medium">
+                <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">✓</div>
+                <span>Receive a custom proposed delegation plan in 24 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact / Booking Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-brand-cream rounded-3xl p-8 border border-stone-200 custom-shadow relative">
+              
+              <h3 class="text-2xl font-bold text-brand-navy mb-2">Send an Inquiry & Reserve Your Spot</h3>
+              <p class="text-xs text-stone-500 mb-6">Fill out the quick details below so we can prepare before our call.</p>
+
+              <form id="inquiry-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="full-name" class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">Full Name *</label>
+                    <input type="text" id="full-name" required placeholder="Jane Doe" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-brand-terracotta bg-white text-sm text-stone-800">
+                  </div>
+                  <div>
+                    <label for="email" class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">Email Address *</label>
+                    <input type="email" id="email" required placeholder="jane@company.com" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-brand-terracotta bg-white text-sm text-stone-800">
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="business-type" class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">Business / Role</label>
+                    <input type="text" id="business-type" placeholder="e.g. Agency Founder, Consultant" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-brand-terracotta bg-white text-sm text-stone-800">
+                  </div>
+                  <div>
+                    <label for="selected-package" class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">Interested Package</label>
+                    <select id="selected-package" class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-brand-terracotta bg-white text-sm text-stone-800">
+                      <option value="Not Sure Yet / Custom">Not Sure Yet / Need Custom Quote</option>
+                      <option value="Starter Retainer ($750/mo)">Starter Retainer (15 hrs/mo)</option>
+                      <option value="Growth Partner ($1,400/mo)">Growth Partner (30 hrs/mo)</option>
+                      <option value="Executive Partner ($2,250/mo)">Executive Partner (50 hrs/mo)</option>
+                      <option value="Executive & Inbox Management">Executive & Inbox Management Service</option>
+                      <option value="Operations & SOP Systems">Operations & SOP Systems Setup</option>
+                      <option value="Social & Content Support">Social & Content Admin</option>
+                      <option value="Client Onboarding & CRM">Client Onboarding & CRM</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="notes" class="block text-xs font-bold text-stone-700 uppercase tracking-wider mb-1.5">What are your top 3 time-wasters right now?</label>
+                  <textarea id="notes" rows="4" placeholder="Tell us about your current tasks, inbox chaos, or tool setup..." class="w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-brand-terracotta bg-white text-sm text-stone-800"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl bg-brand-terracotta hover:bg-brand-terracottaHover text-white font-extrabold text-base transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                  <span>Submit Inquiry & Request Call</span>
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+
+              <!-- SUCCESS MODAL CONFIRMATION OVERLAY -->
+              <div id="success-overlay" class="hidden absolute inset-0 bg-white/95 rounded-3xl p-8 flex flex-col items-center justify-center text-center space-y-4 z-20 backdrop-blur-sm">
+                <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                  <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+                </div>
+                <h4 class="text-2xl font-bold text-brand-navy">Inquiry Received!</h4>
+                <p class="text-stone-600 text-sm max-w-md">
+                  Thank you, <span id="confirm-name" class="font-bold text-brand-navy"></span>! We’ve sent a confirmation email to <span id="confirm-email" class="font-bold text-brand-navy"></span>. Sarah will review your details and send calendar options within 4 business hours.
+                </p>
+                <button onclick="resetForm()" class="px-6 py-2.5 rounded-xl bg-stone-900 text-white text-xs font-bold hover:bg-stone-800">
+                  Send Another Inquiry
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-navy text-white pt-16 pb-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 pb-12 border-b border-stone-800">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4 md:col-span-1">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-brand-terracotta text-white flex items-center justify-center font-bold text-lg">A</div>
+            <span class="font-bold text-xl tracking-tight">Apex<span class="text-brand-terracotta">VA</span></span>
+          </div>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            High-touch executive administrative support and systems optimization for ambitious founders.
+          </p>
+          <div class="text-xs text-stone-400">
+            📍 Operating in EST (Available Globally)
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-stone-300 mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="#packages" class="hover:text-white transition-colors">Pricing & Packages</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors">About Founder</a></li>
+            <li><a href="#testimonials" class="hover:text-white transition-colors">Client Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Trust -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-stone-300 mb-4">Trust & Guarantee</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li>Strict NDA Secured</li>
+            <li>1Password Encrypted</li>
+            <li>Weekly Hours Tracking</li>
+            <li>Satisfaction Guarantee</li>
+          </ul>
+        </div>
+
+        <!-- Direct Contact -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-stone-300 mb-4">Get In Touch</h4>
+          <div class="space-y-3 text-xs text-stone-400">
+            <p class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-terracotta"></i> hello@apexvastudio.com
+            </p>
+            <p class="flex items-center gap-2">
+              <i data-lucide="clock" class="w-4 h-4 text-brand-sage"></i> Mon-Fri: 8am - 6pm EST
+            </p>
+            
+            <!-- Social Icons -->
+            <div class="flex space-x-3 pt-2">
+              <a href="#" class="w-8 h-8 rounded-lg bg-stone-800 flex items-center justify-center text-stone-300 hover:bg-brand-terracotta hover:text-white transition-colors">
+                <i data-lucide="linkedin" class="w-4 h-4"></i>
+              </a>
+              <a href="#" class="w-8 h-8 rounded-lg bg-stone-800 flex items-center justify-center text-stone-300 hover:bg-brand-terracotta hover:text-white transition-colors">
+                <i data-lucide="twitter" class="w-4 h-4"></i>
+              </a>
+              <a href="#" class="w-8 h-8 rounded-lg bg-stone-800 flex items-center justify-center text-stone-300 hover:bg-brand-terracotta hover:text-white transition-colors">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500">
+        <p>© <span id="current-year"></span> ApexVA Studio LLC. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 sm:mt-0">
+          <a href="#" class="hover:text-stone-400">Privacy Policy</a>
+          <a href="#" class="hover:text-stone-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Set Copyright Year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // ROI Calculator Interactive Logic
+    const hoursSlider = document.getElementById('hours-slider');
+    const rateSlider = document.getElementById('rate-slider');
+    const hoursVal = document.getElementById('hours-val');
+    const rateVal = document.getElementById('rate-val');
+    const calcCost = document.getElementById('calc-cost');
+    const calcHours = document.getElementById('calc-hours');
+
+    function updateROI() {
+      const hours = parseInt(hoursSlider.value);
+      const rate = parseInt(rateSlider.value);
+      
+      hoursVal.textContent = hours + ' Hours';
+      rateVal.textContent = '$' + rate + '/hr';
+      
+      const monthlyCost = hours * rate * 4;
+      const monthlyHours = hours * 4;
+
+      calcCost.textContent = '$' + monthlyCost.toLocaleString() + ' / month';
+      calcHours.textContent = monthlyHours + ' hours';
+    }
+
+    hoursSlider.addEventListener('input', updateROI);
+    rateSlider.addEventListener('input', updateROI);
+
+    // Package Selection Pre-fill Trigger
+    function selectPackage(packageName) {
+      const selectElem = document.getElementById('selected-package');
+      selectElem.value = packageName;
+      
+      // Highlight form dropdown temporarily
+      selectElem.classList.add('ring-2', 'ring-brand-terracotta');
+      setTimeout(() => {
+        selectElem.classList.remove('ring-2', 'ring-brand-terracotta');
+      }, 1500);
+
+      // Smooth scroll to form
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function preselectService(serviceName) {
+      const selectElem = document.getElementById('selected-package');
+      selectElem.value = serviceName;
+      document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // FAQ Accordion Logic
+    const faqBtns = document.querySelectorAll('.faq-btn');
+    faqBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('[data-lucide="chevron-down"]');
+        
+        const isHidden = content.classList.contains('hidden');
+        
+        // Close all others
+        document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+        document.querySelectorAll('.faq-btn [data-lucide="chevron-down"]').forEach(i => i.style.transform = 'rotate(0deg)');
+        
+        if (isHidden) {
+          content.classList.remove('hidden');
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+
+    // Time Slot Simulator Pills Selection
+    const timeSlots = document.querySelectorAll('.time-slot-btn');
+    timeSlots.forEach(slot => {
+      slot.addEventListener('click', (e) => {
+        e.preventDefault();
+        timeSlots.forEach(s => s.classList.remove('bg-brand-terracotta', 'text-white', 'border-brand-terracotta'));
+        slot.classList.add('bg-brand-terracotta', 'text-white', 'border-brand-terracotta');
+      });
+    });
+
+    // Day Selection Pill Simulation
+    const dayBtns = document.querySelectorAll('.time-slot-day');
+    dayBtns.forEach(day => {
+      day.addEventListener('click', (e) => {
+        e.preventDefault();
+        dayBtns.forEach(d => d.classList.remove('border-brand-terracotta', 'ring-2', 'ring-brand-terracotta/30'));
+        day.classList.add('border-brand-terracotta', 'ring-2', 'ring-brand-terracotta/30');
+      });
+    });
+
+    // Form Submission Handling
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('full-name').value;
+      const email = document.getElementById('email').value;
+
+      document.getElementById('confirm-name').textContent = name;
+      document.getElementById('confirm-email').textContent = email;
+
+      document.getElementById('success-overlay').classList.remove('hidden');
+    }
+
+    function resetForm() {
+      document.getElementById('inquiry-form').reset();
+      document.getElementById('success-overlay').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
